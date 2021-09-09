@@ -4,6 +4,7 @@
       <th>#</th>
       <th>Flag</th>
       <th>Name</th>
+      <th>Capital</th>
       <th>Population</th>
       <th>Operations</th>
     </tr>
@@ -13,6 +14,7 @@
       <td>{{ i + 1 }}</td>
       <td><img class="small-flag" [src]="country.flag" /></td>
       <td>{{ country.name }}</td>
+      <td>{{ country.capital }}</td>
       <td>{{ country.population | number }}</td>
       <td><a [routerLink]="['/country', country.alpha2Code]">Read</a></td>
     </tr>
