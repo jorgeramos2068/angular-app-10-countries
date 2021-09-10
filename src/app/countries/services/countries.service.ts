@@ -21,6 +21,11 @@ export class CountriesService {
     return this.http.get<Country[]>(url);
   }
 
+  searchByRegion(region: string): Observable<Country[]> {
+    const url = `${this.urlApi}/region/${region}`;
+    return this.http.get<Country[]>(url);
+  }
+
   getCountryByAlpha(id: string): Observable<Country> {
     const url = `${this.urlApi}/alpha/${id}`;
     return this.http.get<Country>(url);
