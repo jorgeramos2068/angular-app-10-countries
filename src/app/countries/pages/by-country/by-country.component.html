@@ -1,16 +1,18 @@
-<h2>Search Country</h2>
-<hr />
+<div class="animate__animated animate__fadeIn">
+  <h2>Search Country</h2>
+  <hr />
 
-<div class="row">
-  <div class="col">
-    <app-country-input
-      placeholder="Search country..."
-      (onEnter)="search($event)"
-      (onDebounce)="doSuggestions($event)"
-    ></app-country-input>
+  <div class="row">
+    <div class="col">
+      <app-country-input
+        placeholder="Search country..."
+        (onEnter)="search($event)"
+        (onDebounce)="doSuggestions($event)"
+      ></app-country-input>
+    </div>
   </div>
+  <hr />
 </div>
-<hr />
 
 <div *ngIf="hasErrors" class="alert alert-danger">
   No data was found with the term: {{ term }}
