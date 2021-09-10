@@ -32,17 +32,24 @@ export class ByCountryComponent {
   }
 
   doSuggestions(localTerm: string): void {
-    this.term = localTerm;
-    this.hasErrors = false;
-    this.showSuggested = true;
-    this.countriesService.searchCountry(localTerm).subscribe({
-      next: (countries) => {
-        this.suggestedCountries = countries.splice(0, 5);
-      },
-      error: (err) => {
-        this.suggestedCountries = [];
-        console.log(err);
-      },
-    });
+    if (localTerm !== '') {
+      this.term = localTerm;
+      this.hasErrors = false;
+      this.showSuggested = true;
+      this.countriesService.searchCountry(localTerm).subscribe({
+        next: (countries) => {
+          this.suggestedCountries = countries.splice(0, 5);
+        },
+        error: (err) => {
+          this.hasErrors = true;
+          this.suggestedCountries = [];
+          this.showSuggested = false;
+          console.log(err);
+        },
+      });
+    } else {
+      this.suggestedCountries = [];
+      this.showSuggested = false;
+    }
   }
 }
