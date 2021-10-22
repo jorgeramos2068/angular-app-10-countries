@@ -7,7 +7,7 @@ import { Country } from '../interfaces/countries.interface';
   providedIn: 'root',
 })
 export class CountriesService {
-  private urlApi: string = 'https://restcountries.eu/rest/v2';
+  private urlApi: string = 'https://restcountries.com/rest/v2';
 
   constructor(private http: HttpClient) {}
 
