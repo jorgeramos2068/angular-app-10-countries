@@ -7,6 +7,8 @@ import { ByCountryComponent } from './pages/by-country/by-country.component';
 import { ByRegionComponent } from './pages/by-region/by-region.component';
 import { ReadCountryComponent } from './pages/read-country/read-country.component';
 import { RouterModule } from '@angular/router';
+import { CountryTableComponent } from './components/country-table/country-table.component';
+import { CountryInputComponent } from './components/country-input/country-input.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { RouterModule } from '@angular/router';
     ByCountryComponent,
     ByRegionComponent,
     ReadCountryComponent,
+    CountryTableComponent,
+    CountryInputComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule],
   exports: [

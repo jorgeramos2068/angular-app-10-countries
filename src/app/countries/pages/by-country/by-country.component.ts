@@ -13,7 +13,8 @@ export class ByCountryComponent {
 
   constructor(private countriesService: CountriesService) {}
 
-  search() {
+  search(localTerm: string) {
+    this.term = localTerm;
     this.hasErrors = false;
     this.countriesService.searchCountry(this.term).subscribe({
       next: (respCountries: Country[]) => {
